@@ -1172,27 +1172,7 @@
     <script src="assets/js/TweenMax.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", async function (e) {
-            e.preventDefault();
-
-            const form = e.target;
-            const formMessage = document.getElementById("formMessage");
-
-            const res = await fetch(form.action, {
-                method: form.method,
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (res.ok) {
-                formMessage.innerHTML = "<span style='color:green;'>✅ Message sent successfully!</span>";
-                form.reset();
-            } else {
-                formMessage.innerHTML = "<span style='color:red;'>❌ Failed to send message. Please try again.</span>";
-            }
-        });
-    </script>
+    
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
