@@ -4163,7 +4163,9 @@ button i {
 	overflow: hidden;
 	box-shadow: 0px 10px 51px rgba(0, 0, 0, 0.07);
 }
-
+ul.skill-items i.fa-shopify {
+	background: green;
+}
 .bg-dark .profile-grid ul a {
 	color: var(--white);
 	background-image: url(../img/shape/overlay-bg.png);
