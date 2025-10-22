@@ -7483,7 +7483,7 @@ ul.gallery-project-basic-info li:first-child {
 }
 
 .ventix-preloader .animation-preloader::after {
-    content: "A";
+    content: "";
     position: absolute;
     left: 50%;
     top: 50%;
