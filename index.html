@@ -25,7 +25,12 @@
     <link href="assets/css/unit-test.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+
+
+
     <!-- ========== End Stylesheet ========== -->
 
     <!--[if lte IE 9]>
@@ -81,12 +86,97 @@
     }
 
     .portfolio-pagination a:hover {
-        background: #007bff;
+        background: #72E98D;
         color: #fff;
     }
 
     .portfolio-pagination .page-info {
         font-weight: 600;
+    }
+
+    .all-btn {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* space between buttons */
+}
+
+.filter-btn {
+  background-color: #f4f4f4;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background-color: #72e98d;
+  color: white;
+}
+
+.filter-btn:hover {
+  background-color: #72e98d;
+  color: white;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 992px) {
+  .filter-btn {
+    padding: 9px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-btn {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    flex: 1 1 45%; /* 2 buttons per row */
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-btn {
+    flex: 1 1 100%; /* 1 button per row */
+  }
+}
+
+
+
+    .toast-success {
+        background-color: #28a745 !important;
+        /* Green */
+        color: #fff !important;
+    }
+
+    .toast-error {
+        background-color: #dc3545 !important;
+        /* Red */
+        color: #fff !important;
+    }
+
+    .toast-primary {
+        background-color: #0d6efd !important;
+        /* Blue */
+        color: #fff !important;
+    }
+
+    .all-btn {
+        margin-top: 50px;
+    }
+
+    .portfolio-style-one {
+        transition: all 0.4s ease;
+    }
+
+    .hidden-item {
+        display: none;
     }
 </style>
 
@@ -124,6 +214,20 @@
     ============================================= -->
     <header>
         <!-- Start Navigation -->
+        <!-- Toast Container -->
+        <!-- Toast Container -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 9999;">
+            <div id="toastMessage" class="toast align-items-center border-0" role="alert" aria-live="assertive"
+                aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body fw-semibold"></div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+
         <nav
             class="navbar navbar-common mobile-sidenav nav-blur navbar-sticky navbar-default validnavs navbar-fixed white no-background">
 
@@ -369,7 +473,7 @@
                 <!-- End Single Item -->
 
 
-                 <div class="service-style-one col-lg-6 col-md-6">
+                <div class="service-style-one col-lg-6 col-md-6">
                     <div class="service-style-one-item">
                         <div class="thumb">
                             <img src="assets/img/icon/web-design.png" alt="Icon">
@@ -378,7 +482,8 @@
                             <h4><a href="#" data-bs-toggle="modal">Shopify
                                     Development</a></h4>
                             <p>
-                              I create dynamic, responsive, and SEO-optimized Shopify stores with custom themes, app integrations, and a fully managed eCommerce experience.
+                                I create dynamic, responsive, and SEO-optimized Shopify stores with custom themes, app
+                                integrations, and a fully managed eCommerce experience.
                             </p>
 
                         </div>
@@ -613,7 +718,9 @@
                         <h2 class="title">I build full-stack <br> web applications that help people</h2>
                         <p>
                             I'm Abdul Wahid, a passionate Full Stack Web Developer with 2.5 years of experience. I
-                            specialize in building modern, scalable web applications using Laravel, React.js, MySQL, WordPress, and Shopify. I love crafting efficient backend systems and elegant front-end user experiences.
+                            specialize in building modern, scalable web applications using Laravel, React.js, MySQL,
+                            WordPress, and Shopify. I love crafting efficient backend systems and elegant front-end user
+                            experiences.
                             I'm dedicated to delivering clean code, smooth performance, and meaningful user interfaces.
                         </p>
                         <a href="assets/cv/Abdulwahid-CV.pdf" download class="btn-standard mt-10 smooth-menu">Donwload
@@ -688,9 +795,9 @@
                                         <span>Html</span>
                                     </div>
                                 </li>
-                                 <li>
+                                <li>
                                     <div class="icon">
-                                        <i class="fa-brands fa-shopify"></i>
+                                        <i class="fab fa-shopify"></i>
                                     </div>
                                     <div class="content">
                                         <span>Shopify</span>
@@ -722,6 +829,17 @@
                                     </p>
                                 </li>
                                 <li>
+                                    <h4>Freelancing</h4>
+                                    <h5></h5>
+                                    <span>2024 – Present</span>
+                                    <p>
+                                        Worked on various real-world web development projects using Laravel, WordPress,
+                                        Shopify, HTML, and React.
+                                        Experienced in building dynamic, responsive, and user-friendly web applications
+                                        for different clients.
+                                    </p>
+                                </li>
+                                <li>
                                     <h4>Backend Developer</h4>
                                     <h5>FronxsolutiON Software House</h5>
                                     <span>March 1, 2023 – June 1, 2025</span>
@@ -730,6 +848,7 @@
                                         HTML, CSS, Laravel, and Php in a professional environment.
                                     </p>
                                 </li>
+
                             </ul>
                         </div>
 
@@ -759,12 +878,24 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
 
         <div class="container">
-            <div class="row mt--50">
+            <div class="row mt--50" id="portfolio">
+                <div class="all-btn text-center mb-4">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Laravel">Laravel</button>
+                    <button class="filter-btn" data-filter="Wordpress">Wordpress</button>
+                    <button class="filter-btn" data-filter="Shopify">Shopify</button>
+                    <button class="filter-btn" data-filter="Php">Php</button>
+                    <button class="filter-btn" data-filter="React">React</button>
+                    <button class="filter-btn" data-filter="Html">Html & Css</button>
+                </div>
+
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Laravel Html">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/easytidings.jpg" alt="Image Not Found">
@@ -772,8 +903,7 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>HMTL & LARAVEL</span>
-                                <h2><a href="https://easytidings.com/" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">Easy
+                                <h2><a href="https://easytidings.com/" target="_blank">Easy
                                         Tidings</a></h2>
                             </div>
                         </div>
@@ -781,7 +911,7 @@
                 </div>
                 <!-- End Single Item -->
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Laravel Php">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/bestparlyeodds.jpg" alt="Image Not Found">
@@ -789,15 +919,14 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>HMTL & PHP</span>
-                                <h2><a href="https://bestparlayodds.com/" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">Bestparlay Odds</a></h2>
+                                <h2><a href="https://bestparlayodds.com/" target="_blank">Bestparlay Odds</a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End Single Item -->
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Laravel Html">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/thoery.jpg" alt="Image Not Found">
@@ -805,8 +934,7 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>HMTL & LARAVEL</span>
-                                <h2><a href="https://theory.fronxsolutions.com/" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">Exam And
+                                <h2><a href="https://theory.fronxsolutions.com/" target="_blank">Exam And
                                         Courses</a></h2>
                             </div>
                         </div>
@@ -814,7 +942,7 @@
                 </div>
                 <!-- End Single Item -->
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Php Html">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/boicomplianceservices.jpg" alt="Image Not Found">
@@ -822,15 +950,14 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>HMTL & PHP</span>
-                                <h2><a href="https://boicomplianceservices.com/" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">Boi
+                                <h2><a href="https://boicomplianceservices.com/" target="_blank">Boi
                                         Compliance Services </a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-9.png" alt="Image Not Found">
@@ -838,8 +965,9 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>Wordpress</span>
-                                <h2><a href="https://allaboveconstructions.com/" data-bs-toggle="modal" data-bs-target="#projectSingleModal">All Above Construction
-                                        </a></h2>
+                                <h2><a href="https://allaboveconstructions.com/" data-bs-toggle="modal"
+                                        data-bs-target="#projectSingleModal">All Above Construction
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
@@ -847,7 +975,7 @@
                 <!-- End Single Item -->
 
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Laravel Html">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/movie.jpg" alt="Image Not Found">
@@ -855,8 +983,7 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>Html & Laravel</span>
-                                <h2><a href="https://movieaffix.com/" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">MovieaffiX</a></h2>
+                                <h2><a href="https://movieaffix.com/" target="_blank">MovieaffiX</a></h2>
                             </div>
                         </div>
                     </div>
@@ -864,7 +991,7 @@
                 <!-- End Single Item -->
 
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Laravel Html">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/iaify.jpg" alt="Image Not Found">
@@ -872,8 +999,7 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>HTML & LARAVEL</span>
-                                <h2><a href="https://iatify.com/en" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">Iatify</a></h2>
+                                <h2><a href="https://iatify.com/en" target="_blank">Iatify</a></h2>
                             </div>
                         </div>
                     </div>
@@ -881,7 +1007,7 @@
                 <!-- End Single Item -->
 
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item HTML">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/pharmacy.jpg" alt="Image Not Found">
@@ -897,7 +1023,7 @@
                 </div>
                 <!-- End Single Item -->
                 <!-- Single Item -->
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/claessens.png.webp" alt="Image Not Found">
@@ -905,13 +1031,12 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>WordPress</span>
-                                <h2><a href="#" data-bs-toggle="modal"
-                                        data-bs-target="#projectSingleModal">claessens</a></h2>
+                                <h2><a href="#" target="_blank">claessens</a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/travel-12.png.jpg" alt="Image Not Found">
@@ -926,7 +1051,7 @@
                     </div>
                 </div>
 
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-8.png" alt="Image Not Found">
@@ -934,15 +1059,16 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>Wordpress</span>
-                                <h2><a href="https://tareekhuna.com/" data-bs-toggle="modal" data-bs-target="#projectSingleModal">Tareekhuna
-                                        </a></h2>
+                                <h2><a href="https://tareekhuna.com/" data-bs-toggle="modal"
+                                        data-bs-target="#projectSingleModal">Tareekhuna
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
 
 
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-11.png" alt="Image Not Found">
@@ -950,8 +1076,9 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>Wordpress</span>
-                                <h2><a href="https://mheuromotors.com/" data-bs-toggle="modal" data-bs-target="#projectSingleModal">MH Euro Motors
-                                        </a></h2>
+                                <h2><a href="https://mheuromotors.com/" data-bs-toggle="modal"
+                                        data-bs-target="#projectSingleModal">MH Euro Motors
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
@@ -959,7 +1086,7 @@
 
 
 
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-10.png" alt="Image Not Found">
@@ -967,13 +1094,14 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>Wordpress</span>
-                                <h2><a href="https://meoskills.fr/" data-bs-toggle="modal" data-bs-target="#projectSingleModal">Meo Skills
-                                        </a></h2>
+                                <h2><a href="https://meoskills.fr/" data-bs-toggle="modal"
+                                        data-bs-target="#projectSingleModal">Meo Skills
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-16.png" alt="Image Not Found">
@@ -982,12 +1110,12 @@
                             <div class="content-info">
                                 <span>Wordpress</span>
                                 <h2><a href="#!" data-bs-toggle="modal" data-bs-target="#projectSingleModal">OxyEvents
-                                        </a></h2>
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-17.png" alt="Image Not Found">
@@ -996,12 +1124,12 @@
                             <div class="content-info">
                                 <span>Wordpress</span>
                                 <h2><a href="#!" data-bs-toggle="modal" data-bs-target="#projectSingleModal">SofaPro
-                                        </a></h2>
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-6 item-center">
+                <div class="col-lg-6 item-center filter-item Wordpress">
                     <div class="portfolio-style-one">
                         <div class="thumb-zoom">
                             <img src="assets/img/portfolio/Untitled-design-18.png" alt="Image Not Found">
@@ -1009,30 +1137,44 @@
                         <div class="pf-item-info">
                             <div class="content-info">
                                 <span>Wordpress</span>
-                                <h2><a href="#!" data-bs-toggle="modal" data-bs-target="#projectSingleModal">Four Season Movings
-                                        </a></h2>
+                                <h2><a href="#!" data-bs-toggle="modal" data-bs-target="#projectSingleModal">Four Season
+                                        Movings
+                                    </a></h2>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                
+                <div class="col-lg-6 item-center filter-item Wordpress">
+                    <div class="portfolio-style-one">
+                        <div class="thumb-zoom">
+                            <img src="assets/img/portfolio/motion.io.PNG" alt="Image Not Found">
+                        </div>
+                        <div class="pf-item-info">
+                            <div class="content-info">
+                                <span>Wordpress</span>
+                                <h2><a href="https://motionprocess.io/" data-bs-toggle="modal"
+                                        data-bs-target="#projectSingleModal">Motion Process
+                                    </a></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
                 <!-- End Single Item -->
+            </div>
+
+            <div class="text-center mt-4">
+                <button id="seeMoreBtn" class="btn px-4 py-2">See More</button>
             </div>
         </div>
 
 
-        <!-- Pagination -->
-        <!-- Pagination -->
-        <div class="portfolio-pagination text-center mt-5">
-            <a href="#!" class="prev-btn">
-                <i class="fas fa-chevron-left"></i>
-            </a>
-            <span class="page-info">Page 1</span>
-            <a href="#!" class="next-btn">
-                <i class="fas fa-chevron-right"></i>
-            </a>
-        </div>
+
 
 
 
@@ -1285,6 +1427,7 @@
 
     <!-- jQuery Frameworks
     ============================================= -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/jquery.appear.js"></script>
@@ -1304,44 +1447,129 @@
     <script src="assets/js/TweenMax.min.js"></script>
     <script src="assets/js/main.js"></script>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const itemsPerPage = 4; // ek page me kitne items
-            const container = document.querySelector(".portfolio");
-            const items = container.querySelectorAll(".col-lg-6.item-center");
-            const totalPages = Math.ceil(items.length / itemsPerPage);
+$(document).ready(function () {
+    // Count total projects
+    const totalProjects = $(".filter-item").length;
+    $("button[data-filter='all']").append(` (<span class="count">${totalProjects}</span>)`);
 
-            let currentPage = 1;
+    // Loop through each button and count matching projects
+    $(".filter-btn").each(function () {
+        const filter = $(this).data("filter");
+        if (filter !== "all") {
+            const count = $("." + filter).length;
+            $(this).append(` (<span class="count">${count}</span>)`);
+        }
+    });
+});
+</script>
 
-            function showPage(page) {
-                items.forEach((item, index) => {
-                    item.style.display =
-                        index >= (page - 1) * itemsPerPage && index < page * itemsPerPage
-                            ? "block"
-                            : "none";
-                });
-                document.querySelector(".page-info").textContent = `Page ${page} of ${totalPages}`;
+    <script>
+        $(document).ready(function () {
+
+            const itemsPerPage = 4;
+
+            // Function to show filtered items
+            function showFilteredItems(filter) {
+                const $items = $(".filter-item");
+                let $filteredItems;
+
+                if (filter === "all") {
+                    $filteredItems = $items;
+                } else {
+                    $filteredItems = $("." + filter);
+                }
+
+                // Hide all and show first 4 of the filtered
+                $items.hide();
+                $filteredItems.slice(0, itemsPerPage).fadeIn(400);
+
+                // Show or hide "See More" button based on count
+                if ($filteredItems.length > itemsPerPage) {
+                    $("#seeMoreBtn").text("See More").show();
+                } else {
+                    $("#seeMoreBtn").hide();
+                }
             }
 
-            document.querySelector(".prev-btn").addEventListener("click", function () {
-                if (currentPage > 1) {
-                    currentPage--;
-                    showPage(currentPage);
+            // Initial load (show 4 of all)
+            showFilteredItems("all");
+
+            // Filter button click
+            $(".filter-btn").on("click", function () {
+                const filter = $(this).data("filter");
+
+                // Active button style
+                $(".filter-btn").removeClass("active");
+                $(this).addClass("active");
+
+                // Show filtered items
+                showFilteredItems(filter);
+            });
+
+            // See More / See Less button
+            $("#seeMoreBtn").on("click", function (e) {
+                e.preventDefault();
+
+                const filter = $(".filter-btn.active").data("filter");
+                const $items = (filter === "all") ? $(".filter-item") : $("." + filter);
+
+                if ($(this).text() === "See More") {
+                    $items.fadeIn(400);
+                    $(this).text("See Less");
+                } else {
+                    $items.hide().slice(0, itemsPerPage).fadeIn(400);
+                    $(this).text("See More");
                 }
             });
 
-            document.querySelector(".next-btn").addEventListener("click", function () {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    showPage(currentPage);
-                }
-            });
-
-            showPage(currentPage);
         });
     </script>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#contactForm").on("submit", function (e) {
+                e.preventDefault();
+
+                const form = $(this);
+                const toastEl = $("#toastMessage");
+                const toastBody = toastEl.find(".toast-body");
+                const toast = new bootstrap.Toast(toastEl[0], { delay: 10000 }); // 10s auto-hide
+
+                $.ajax({
+                    url: form.attr("action"),
+                    method: "POST",
+                    data: form.serialize(),
+                    dataType: "json",
+                    beforeSend: function () {
+                        toastEl.removeClass("toast-success toast-error").addClass("toast-primary");
+                        toastBody.text("Sending your message...");
+                        toast.show();
+                    },
+                    success: function () {
+                        toastEl.removeClass("toast-primary toast-error").addClass("toast-success");
+                        toastBody.text("✅ Thank you! Your message has been sent successfully.");
+                        form.trigger("reset");
+                        toast.show();
+                    },
+                    error: function () {
+                        toastEl.removeClass("toast-primary toast-success").addClass("toast-error");
+                        toastBody.text("❌ Something went wrong. Please try again.");
+                        form.trigger("reset");
+                        toast.show();
+                    },
+                });
+            });
+        });
+    </script>
+
+
+
+
 
 
 </body>
