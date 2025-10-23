@@ -40,145 +40,6 @@
 </head>
 
 
-<style>
-    .portfolio-style-one .thumb-zoom {
-        width: 100%;
-        height: 300px;
-        /* sab ka same height */
-        background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
-        /* halka background */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        border: 1px solid #ddd;
-        /* optional border */
-        border-radius: 8px;
-        /* optional rounded corners */
-    }
-
-    .portfolio-style-one .thumb-zoom img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-        /* poora image fit kare, crop nahi hoga */
-    }
-
-    .portfolio-pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        font-size: 18px;
-    }
-
-    .portfolio-pagination a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: #f5f5f5;
-        border-radius: 50%;
-        color: #333;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .portfolio-pagination a:hover {
-        background: #72E98D;
-        color: #fff;
-    }
-
-    .portfolio-pagination .page-info {
-        font-weight: 600;
-    }
-
-    .all-btn {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px; /* space between buttons */
-}
-
-.filter-btn {
-  background-color: #f4f4f4;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 25px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.filter-btn.active {
-  background-color: #72e98d;
-  color: white;
-}
-
-.filter-btn:hover {
-  background-color: #72e98d;
-  color: white;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 992px) {
-  .filter-btn {
-    padding: 9px 16px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .all-btn {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .filter-btn {
-    flex: 1 1 45%; /* 2 buttons per row */
-    text-align: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .filter-btn {
-    flex: 1 1 100%; /* 1 button per row */
-  }
-}
-
-
-
-    .toast-success {
-        background-color: #28a745 !important;
-        /* Green */
-        color: #fff !important;
-    }
-
-    .toast-error {
-        background-color: #dc3545 !important;
-        /* Red */
-        color: #fff !important;
-    }
-
-    .toast-primary {
-        background-color: #0d6efd !important;
-        /* Blue */
-        color: #fff !important;
-    }
-
-    .all-btn {
-        margin-top: 50px;
-    }
-
-    .portfolio-style-one {
-        transition: all 0.4s ease;
-    }
-
-    .hidden-item {
-        display: none;
-    }
-</style>
 
 <body class="bg-dark onepage-version bg-fixed" style="background-image: url(assets/img/shape/banner-1.png);">
 
@@ -1336,92 +1197,99 @@
 
     <!-- Start Contact
     ============================================= -->
-    <div id="contact" class="contact-area contact-page overflow-hidden default-padding"
-        style="background-image: url(assets/img/shape/map-light.png);">
-        <div class="container">
-            <div class="row">
+   <div id="contact" class="contact-area contact-page overflow-hidden default-padding"
+    style="background-image: url(assets/img/shape/map-light.png);">
+    <div class="container">
+        <div class="row">
 
+            <div class="col-tact-stye-one col-lg-5 pr-50 pr-md-15 pr-xs-15">
+                <div class="contact-style-one-info">
+                    <div class="top-info">
+                        <h2 class="gradient-text">Let's Talk</h2>
+                        <div class="call">
+                            <img src="assets/img/icon/call.png" alt="Image not Found">
+                            <a class="phone-link" href="tel:03042109730">0304 2109730</a>
+                        </div>
+                    </div>
+                    <ul class="contact-address">
+                        <li>
+                            <div class="info">
+                                <h4>Official Email</h4>
+                                <a href="mailto:abdulwhaidfarhan516@gmail.com">abdulwhaidfarhan516@gmail.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <p class="copyright">
+                        © 2025 Abdul Wahid. All Rights Reserved
+                    </p>
 
-                <div class="col-tact-stye-one col-lg-5 pr-50 pr-md-15 pr-xs-15">
-                    <div class="contact-style-one-info">
-                        <div class="top-info">
-                            <h2 class="gradient-text">Let's Talk</h2>
-                            <div class="call">
-                                <img src="assets/img/icon/call.png" alt="Image not Found">
-                                <a class="phone-link" href="tel:03042109730">0304 2109730</a>
+                    <!-- Social Links -->
+                    <div class="social-links mt-4">
+                        <a href="https://www.linkedin.com/in/abdulwahid-farhan-750702271/" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/abdulwahid.farhan.92/" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/abdul_official_.08/" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/abdulwahid-00" class="github" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-tact-stye-one col-lg-7 pl-60 pl-md-15 pl-xs-15 mt-md-50 mt-xs-50">
+                <div class="contact-form-style-one">
+                    <form id="contactForm" action="https://formspree.io/f/mjkojoze" method="POST"
+                        class="contact-form mt-30">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <input class="form-control" name="name" placeholder="Name" type="text" required>
+                                    <span class="alert-error"></span>
+                                </div>
                             </div>
                         </div>
-                        <ul class="contact-address">
 
-                            <li>
-                                <div class="info">
-                                    <h4>Official Email</h4>
-                                    <a href="mailto:abdulwhaidfarhan516@gmail.com">abdulwhaidfarhan516@gmail.com</a>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="_replyto" placeholder="Email*" type="email" required>
+                                    <span class="alert-error"></span>
                                 </div>
-                            </li>
-                        </ul>
-                        <p class="copyright">
-                            © 2025 Abdul wahid. All Rights Reserved
-                        </p>
-                    </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <input class="form-control" name="phone" placeholder="Phone" type="text">
+                                    <span class="alert-error"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group comments">
+                                    <textarea class="form-control" name="message"
+                                        placeholder="Tell Us About Project *" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button type="submit">
+                                    <i class="fa fa-paper-plane"></i> Get in Touch
+                                </button>
+                            </div>
+                        </div>
+
+                        <div id="formMessage" style="margin-top:10px;"></div>
+                    </form>
                 </div>
-
-                <div class="col-tact-stye-one col-lg-7 pl-60 pl-md-15 pl-xs-15 mt-md-50 mt-xs-50">
-                    <div class="contact-form-style-one">
-                        <form id="contactForm" action="https://formspree.io/f/mjkojoze" method="POST"
-                            class="contact-form mt-30">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <input class="form-control" name="name" placeholder="Name" type="text" required>
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" name="_replyto" placeholder="Email*" type="email"
-                                            required>
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input class="form-control" name="phone" placeholder="Phone" type="text">
-                                        <span class="alert-error"></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group comments">
-                                        <textarea class="form-control" name="message"
-                                            placeholder="Tell Us About Project *" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <button type="submit">
-                                        <i class="fa fa-paper-plane"></i> Get in Touch
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div id="formMessage" style="margin-top:10px;"></div>
-                        </form>
-
-
-                    </div>
-                </div>
-
             </div>
+
         </div>
     </div>
+</div>
+
+<!-- Add Font Awesome CDN if not already included -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <!-- Brand Blog -->
 
 
